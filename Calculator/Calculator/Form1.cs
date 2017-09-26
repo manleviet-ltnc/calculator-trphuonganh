@@ -116,5 +116,15 @@ namespace Calculator
         {
             lblDisplay.Text = ((double.Parse(lblDisplay.Text) / 100)).ToString();
         }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lblDisplay.Text.Length > 0)
+                lblDisplay.Text = lblDisplay.Text.Remove(lblDisplay.Text.Length - 1, 1);
+        }
+        private void btnNho_Click(object sender, EventArgs e)
+        {
+            nho = 0;
+            lblDisplay.ResetText();
+        }
     }
 }

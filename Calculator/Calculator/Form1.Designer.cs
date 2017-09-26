@@ -237,6 +237,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Backspace";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnNho
             // 
