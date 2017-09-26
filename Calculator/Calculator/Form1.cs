@@ -102,5 +102,19 @@ namespace Calculator
             }
                 
         }
+        private void btnCan_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = (Math.Sqrt(Double.Parse(lblDisplay.Text))).ToString();
+        }
+
+        private void btnDoiDau_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = (-1 * (double.Parse(lblDisplay.Text))).ToString();
+        }
+
+        private void btnPhanTram_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = ((double.Parse(lblDisplay.Text) / 100)).ToString();
+        }
     }
 }

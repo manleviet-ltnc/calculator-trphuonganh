@@ -226,6 +226,7 @@
             this.btnDoiDau.TabIndex = 17;
             this.btnDoiDau.Text = "-/+";
             this.btnDoiDau.UseVisualStyleBackColor = true;
+            this.btnDoiDau.Click += new System.EventHandler(this.btnDoiDau_Click);
             // 
             // btnXoa
             // 
@@ -256,6 +257,7 @@
             this.btnPhanTram.TabIndex = 7;
             this.btnPhanTram.Text = "%";
             this.btnPhanTram.UseVisualStyleBackColor = true;
+            this.btnPhanTram.Click += new System.EventHandler(this.btnPhanTram_Click);
             // 
             // btnCan
             // 
@@ -266,6 +268,7 @@
             this.btnCan.TabIndex = 12;
             this.btnCan.Text = "√";
             this.btnCan.UseVisualStyleBackColor = true;
+            this.btnCan.Click += new System.EventHandler(this.btnCan_Click);
             // 
             // btnBang
             // 
