@@ -19,7 +19,7 @@ namespace Calculator
 
         bool isTypingNumber = false;
 
-        enum PhepToan {None, Cong, Tru, Nhan,Chia };
+        enum PhepToan { None, Cong, Tru, Nhan, Chia };
         PhepToan pheptoan;
 
         double nho;
@@ -31,18 +31,22 @@ namespace Calculator
         private void NhapSo(string so)
         {
             if (isTypingNumber)
-                lblDisplay.Text = lblDisplay.Text + so;
+            {
+                if (lblDisplay.Text == "0")
+                    lblDisplay.Text = "";
+                lblDisplay.Text += so;
+            }
             else
             {
                 lblDisplay.Text = so;
                 isTypingNumber = true;
             }
-        }   
-              
+        }
+
         private void NhapPhepToan(object sender, EventArgs e)
         {
-           if (nho !=0)
-            TinhKetQua();
+            if (nho != 0)
+                TinhKetQua();
 
             Button btn = (Button)sender;
             switch (btn.Text)
@@ -50,7 +54,7 @@ namespace Calculator
                 case "+": pheptoan = PhepToan.Cong; break;
                 case "-": pheptoan = PhepToan.Tru; break;
                 case "*": pheptoan = PhepToan.Nhan; break;
-                case "/": pheptoan = PhepToan.Chia; break;    
+                case "/": pheptoan = PhepToan.Chia; break;
             }
 
             nho = double.Parse(lblDisplay.Text);
@@ -81,7 +85,7 @@ namespace Calculator
             isTypingNumber = false;
             nho = 0;
             pheptoan = PhepToan.None;
-         
+
 
         }
 
@@ -103,7 +107,7 @@ namespace Calculator
                     break;
 
             }
-                
+
         }
         private void btnCan_Click(object sender, EventArgs e)
         {
@@ -123,15 +127,32 @@ namespace Calculator
         {
             if (lblDisplay.Text.Length > 0)
                 lblDisplay.Text = lblDisplay.Text.Remove(lblDisplay.Text.Length - 1, 1);
-            if (lblDisplay.Text =="")
-                {
+            if (lblDisplay.Text == "")
+            {
                 lblDisplay.Text = "0";
-          }
+            }
         }
         private void btnNho_Click(object sender, EventArgs e)
         {
             nho = 0;
             lblDisplay.Text = "0";
         }
+        private void btnThapPhan_Click(object sender, EventArgs e)
+        {
+
+            if (lblDisplay.Text.Contains("."))
+            {
+                if (lblDisplay.Text == "0.")
+                {
+                    lblDisplay.Text = "";
+                    NhapSo("0.");
+                }
+                return;
+            }
+
+            lblDisplay.Text += ".";
+        }
     }
+
+
 }
